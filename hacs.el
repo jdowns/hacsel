@@ -46,6 +46,6 @@
    (setq mode-name "hacs lang"))
 
 ;;; TODO: Define keyboard shortcuts for special characters
-
+(global-set-key (kbd "<prior>") '(insert-key "→"))
 (provide 'hacs)
 ;;; hacs.el ends here
