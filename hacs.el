@@ -45,7 +45,17 @@
   (setq font-lock-defaults '(myKeywords))
    (setq mode-name "hacs lang"))
 
-;;; TODO: Define keyboard shortcuts for special characters
-(global-set-key (kbd "<prior>") '(insert-key "→"))
+(eval-after-load 'hacs '(global-set-key (kbd "C-c ~") "¬"))
+(eval-after-load 'hacs '(global-set-key (kbd "C-c x") "×"))
+(eval-after-load 'hacs '(global-set-key (kbd "C-c /") "÷"))
+(eval-after-load 'hacs '(global-set-key (kbd "C-c P") "¶"))
+(eval-after-load 'hacs '(global-set-key (kbd "C-c <up>") "↑"))
+(eval-after-load 'hacs '(global-set-key (kbd "C-c <right>") "→"))
+(eval-after-load 'hacs '(global-set-key (kbd "C-c <down>") "↓"))
+(eval-after-load 'hacs '(global-set-key (kbd "C-c [") "⟦"))
+(eval-after-load 'hacs '(global-set-key (kbd "C-c ]") "⟧"))
+(eval-after-load 'hacs '(global-set-key (kbd "C-c <") "⟨"))
+(eval-after-load 'hacs '(global-set-key (kbd "C-c >") "⟩"))
+
 (provide 'hacs)
 ;;; hacs.el ends here
