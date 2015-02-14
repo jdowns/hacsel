@@ -45,17 +45,63 @@
   (setq font-lock-defaults '(myKeywords))
    (setq mode-name "hacs lang"))
 
-(eval-after-load 'hacs '(global-set-key (kbd "C-c ~") "¬"))
-(eval-after-load 'hacs '(global-set-key (kbd "C-c x") "×"))
-(eval-after-load 'hacs '(global-set-key (kbd "C-c /") "÷"))
-(eval-after-load 'hacs '(global-set-key (kbd "C-c P") "¶"))
-(eval-after-load 'hacs '(global-set-key (kbd "C-c <up>") "↑"))
-(eval-after-load 'hacs '(global-set-key (kbd "C-c <right>") "→"))
-(eval-after-load 'hacs '(global-set-key (kbd "C-c <down>") "↓"))
-(eval-after-load 'hacs '(global-set-key (kbd "C-c [") "⟦"))
-(eval-after-load 'hacs '(global-set-key (kbd "C-c ]") "⟧"))
-(eval-after-load 'hacs '(global-set-key (kbd "C-c <") "⟨"))
-(eval-after-load 'hacs '(global-set-key (kbd "C-c >") "⟩"))
+;(setq font-lock-defaults '(myKeywords))
 
-(provide 'hacs)
+(global-set-key
+(kbd "C-c ~")
+'(lambda ()
+   (interactive) (insert "¬")))
+
+(global-set-key
+ (kbd "C-c x")
+ '(lambda ()
+    (interactive) (insert "×")))
+
+(global-set-key
+ (kbd "C-c /")
+ '(lambda ()
+    (interactive) (insert  "÷")))
+
+(global-set-key
+ (kbd "C-c <RET>")
+ '(lambda ()
+    (interactive) (insert "¶")))
+
+(global-set-key
+ (kbd "C-c <up>")
+ '(lambda ()
+    (interactive) (insert "↑")))
+
+(global-set-key
+ (kbd "C-c =")
+ '(lambda ()
+    (interactive) (insert "→")))
+
+(global-set-key
+ (kbd "C-c <down>")
+ '(lambda ()
+    (interactive) (insert "↓")))
+
+(global-set-key
+ (kbd "C-c [")
+ '(lambda ()
+    (interactive) (insert "⟦")))
+
+(global-set-key
+ (kbd "C-c ]")
+ '(lambda ()
+    (interactive) (insert "⟧")))
+
+(global-set-key
+ (kbd "C-c <")
+ '(lambda ()
+    (interactive) (insert "⟨")))
+
+(global-set-key
+ (kbd "C-c >")
+ '(lambda ()
+    (interactive) (insert "⟩")))
+
+
+;(provide 'hacs)
 ;;; hacs.el ends here
