@@ -35,11 +35,11 @@
 ;;; Code:
 (setq myKeywords
   '(("//.*$" . font-lock-comment-face)
-    ("\/\*.\*\/" . font-lock-comment-face)
-    ("[A-Z]* " . font-lock-constant-face)
-    ("space\\|token\\|fragment\\|main\\|sort\\|sugar\\|symbol\\|scheme\\|attribute" . font-lock-keyword-face)
-    ("Compile\\|Leftmost\\|Unif" . font-lock-function-name-face)
-    ("[A-Z][a-z]*" . font-lock-type-face)))
+    ("[/][*].*[*][/]" . font-lock-comment-face)
+    ("[#][A-Za-z0-9_#]*" . font-lock-variable-name-face)
+    ("[@][0-9]+" . font-lock-reference-face)
+    ("[A-Z][A-Za-z0-9_]*" . font-lock-type-face)
+    ("\\<\\(module\\|space\\|token\\|fragment\\|main\\|sort\\|sugar\\|symbol\\|scheme\\|attribute\\|binds\\|as\\)\\>\\|↑\\|↓\\|⟦\\|⟧\\|⟨\\|⟩" . font-lock-keyword-face)))
 
 (define-derived-mode hacs-mode c-mode
   (setq font-lock-defaults '(myKeywords))
