@@ -4,7 +4,7 @@
 
 ;; Author: John Downs
 ;; URL: https://github.com/jdowns/hacsel
-;; Version: 0.0.1
+;; Version: 0.0.2
 ;; Maintainer: John Downs
 ;; Keywords: languages, compilers
 
@@ -36,10 +36,12 @@
 (setq myKeywords
   '(("//.*$" . font-lock-comment-face)
     ("[/][*].*[*][/]" . font-lock-comment-face)
+    ("\\(⟦\\|⟩\\)[^⟦⟧⟨⟩]*\\(⟨\\|⟧\\)" . font-lock-string-face)
     ("[#][A-Za-z0-9_#]*" . font-lock-variable-name-face)
     ("[@][0-9]+" . font-lock-reference-face)
+    ("\\(↑\\|↓\\)[ ]*[a-z][A-Za-z0-9_]*" . font-lock-function-name-face)
     ("[A-Z][A-Za-z0-9_]*" . font-lock-type-face)
-    ("\\<\\(module\\|space\\|token\\|fragment\\|main\\|sort\\|sugar\\|symbol\\|scheme\\|attribute\\|binds\\|as\\)\\>\\|↑\\|↓\\|⟦\\|⟧\\|⟨\\|⟩" . font-lock-keyword-face)))
+    ("\\<\\(module\\|space\\|token\\|fragment\\|main\\|sort\\|sugar\\|symbol\\|scheme\\|attribute\\|binds\\|as\\)\\>" . font-lock-keyword-face)))
 
 (define-derived-mode hacs-mode c-mode
   (setq font-lock-defaults '(myKeywords))
